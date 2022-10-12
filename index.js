@@ -52,6 +52,15 @@ const game = () => {
         playRound(playerSelection, computerSelection);
         console.log(message);
 
+        /* 
+        This is a conditional statement that checks if the message variable contains the string
+        "Player win" and if it does, it increments the playerSore variable by 1 and logs the
+        playerSore and computerScore variables to the console. 
+        If the message variable does not contain the string "Player win" it checks if it contains
+        the string "Computer win" and if it does, it increments the computerScore variable by 1
+        and logs the playerSore and computerScore variables to the console. If the message variable 
+        does not contain the string "Computer win" it logs the playerSore and computerScore variables 
+        to the console. */
         if (message.includes("Player win")) {
             playerSore++;
             console.log(`Playe scorer: ${playerSore} Computer score: ${computerScore}`);
@@ -63,6 +72,11 @@ const game = () => {
         }
     }
 
+    /* This is a conditional statement that checks if the playerSore variable is greater than the
+    computerScore variable. If it is, it logs the string "Player win the game!" to the console. If
+    it is not, it checks if the playerSore variable is less than the computerScore variable. If it
+    is, it logs the string "Computer win the game!" to the console. If it is not, it logs the string
+    "It's a tie!" to the console. */
     if (playerSore > computerScore) {
         console.log("Player win the game!");
     } else if (playerSore < computerScore) {
@@ -70,7 +84,6 @@ const game = () => {
     } else {
         console.log("It's a tie!");
     }
-    
     return message;
 }
 
