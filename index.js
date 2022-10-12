@@ -1,19 +1,77 @@
 /* ==================================
-Assignment (Main JavaScript Project):
- ====================================
+    Assignment (Main JavaScript Project):
+   ==================================
 */
 
-/* 
-Your game is going to play against the computer, so begin with a function called
-computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
-We’ll use this function in the game to make the computer’s play. 
-Tip: use the console to make sure this is returning the expected output before moving to the next step!
- */
+/* initial state */
+let playerSore = 0;
+let computerScore = 0;
+let message = "";
 
+/**
+ * The computerPlay function returns a random option from the computerOptions array.
+ * @returns The computer's choice of rock, paper, or scissors.
+ */
 const computerPlay = () => {
     const computerOptions = ["Rock", "Paper", "Scissors"];
-    const random = Math.floor(Math.random() * 3);
-    return options[random];
+    const randomOption = Math.floor(Math.random(computerOptions) * 3);
+    return computerOptions[randomOption];
 }
 
-console.log(computerPlay());
+/**
+ * The playRound function takes two parameters, playerSelection and computerSelection, and returns a message that
+ * tells the player whether they won, lost, or tied
+ * @param playerSelection - the player's choice
+ * @param computerSelection - a string that represents the computer's choice
+ */
+const playRound = (playerSelection, computerSelection) => {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+  
+    if (playerSelection === computerSelection) {
+        message = `You both chose ${playerSelection}.`;
+    } else if (
+        playerSelection === "rock" && computerSelection === "scissors" || 
+        playerSelection === "paper" && computerSelection === "rock" || 
+        playerSelection === "scissors" && computerSelection === "paper") {
+        message = `Player win! ${playerSelection} beats ${computerSelection}.`;
+    } else {
+        message = `You lose! Computer win ${computerSelection} beats ${playerSelection}.`;
+    } 
+}
+
+/**
+ * The game function is a loop that runs 5 times, each time it runs it calls the playRound function and
+ * passes the playerSelection and computerSelection as arguments
+ * @returns the message variable.
+ */
+const game = () => {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Please enter your choice: Rock, Paper, or Scissors.");
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+        console.log(message);
+
+        if (message.includes("Player win")) {
+            playerSore++;
+            console.log(`Playe scorer: ${playerSore} Computer score: ${computerScore}`);
+        } else if (message.includes("Computer win")) {
+            computerScore++;
+            console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
+        } else {
+            console.log(`It's a tie! Player score: ${playerSore} Computer score: ${computerScore}`);
+        }
+    }
+
+    if (playerSore > computerScore) {
+        console.log("Player win the game!");
+    } else if (playerSore < computerScore) {
+        console.log("Computer win the game!");
+    } else {
+        console.log("It's a tie!");
+    }
+    
+    return message = `Player score: ${playerSore} Computer score: ${computerScore}`;
+}
+
+game();
