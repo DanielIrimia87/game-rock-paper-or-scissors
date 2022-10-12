@@ -59,7 +59,7 @@ const game = () => {
             computerScore++;
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
         } else {
-            console.log(`It's a tie! Player score: ${playerSore} Computer score: ${computerScore}`);
+            console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
         }
     }
 
@@ -71,7 +71,7 @@ const game = () => {
         console.log("It's a tie!");
     }
     
-    return message = `Player score: ${playerSore} Computer score: ${computerScore}`;
+    return message;
 }
 
 game();
