@@ -72,11 +72,14 @@ const game = () => {
         }
     }
 
+    
     /* This is a conditional statement that checks if the playerSore variable is greater than the
-    computerScore variable. If it is, it logs the string "Player win the game!" to the console. If
-    it is not, it checks if the playerSore variable is less than the computerScore variable. If it
-    is, it logs the string "Computer win the game!" to the console. If it is not, it logs the string
-    "It's a tie!" to the console. */
+    computerScore variable. If it is, it logs a message to the console that says "Player win the
+    game!". If the playerSore variable is not greater than the computerScore variable, it checks 
+    if the playerSore variable is less than the computerScore variable. If it is, it logs a message 
+    to the console that says "Computer win the game!". If the playerSore variable is not less
+    than the computerScore variable, it logs a message to the console that says "It's a tie!".
+    */
     if (playerSore > computerScore) {
         console.log(`Player win the game! Player score: ${playerSore} Computer score: ${computerScore}`);
     } else if (playerSore < computerScore) {
