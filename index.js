@@ -34,10 +34,10 @@ const playRound = (playerSelection, computerSelection) => {
         playerSelection === "rock" && computerSelection === "scissors" || 
         playerSelection === "paper" && computerSelection === "rock" || 
         playerSelection === "scissors" && computerSelection === "paper") {
-        message = `Player win! ${playerSelection} beats ${computerSelection}.`;
-    } else {
-        message = `You lose! Computer win ${computerSelection} beats ${playerSelection}.`;
-    } 
+        message = `Player win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
+    }   else {
+        message = `Computer win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
+    }
 }
 
 /**
@@ -78,11 +78,11 @@ const game = () => {
     is, it logs the string "Computer win the game!" to the console. If it is not, it logs the string
     "It's a tie!" to the console. */
     if (playerSore > computerScore) {
-        console.log("Player win the game!");
+        console.log(`Player win the game! Player score: ${playerSore} Computer score: ${computerScore}`);
     } else if (playerSore < computerScore) {
-        console.log("Computer win the game!");
+        console.log(`Computer win the game! Player score: ${playerSore} Computer score: ${computerScore}`);
     } else {
-        console.log("It's a tie!");
+        console.log(`It's a tie! Player score: ${playerSore} Computer score: ${computerScore}`);
     }
     return message;
 }
