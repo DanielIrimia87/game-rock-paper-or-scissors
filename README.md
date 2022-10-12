@@ -18,8 +18,9 @@ https://danielirimia87.github.io/game-rock-paper-or-scissors/
 
 ## How to play
 
-  * Access the link above and open the console. The game will start automatically.
-  * or
+  * Access the link above and open the console. 
+  * The game will start automatically.
+  * or 
   * Clone the repository
   * Open the index.html file in your browser
   * Open the console in your browser
