@@ -28,6 +28,18 @@ https://danielirimia87.github.io/game-rock-paper-or-scissors/
   * Refresh the page to play against
 ##
 
+## Technologies used
+
+  * HTML
+  * JavaScript
+  * Git
+  * GitHub
+
+## Author
+    * Daniel Irimia
+    * Front-End Developer
+    * https://www.linkedin.com/in/irimia-daniel/
+
 
 
 
