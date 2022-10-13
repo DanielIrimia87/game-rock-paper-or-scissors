@@ -38,7 +38,7 @@ https://danielirimia87.github.io/game-rock-paper-or-scissors/
 ## Author
     * Daniel Irimia
     * Front-End Developer
-    * https://www.linkedin.com/in/irimia-daniel/
+    # https://www.linkedin.com/in/irimia-daniel/
 
 
 
