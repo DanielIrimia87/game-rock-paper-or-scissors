@@ -67,7 +67,7 @@ const game = () => {
         } else if (message.includes("Computer win")) {
             computerScore++;
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
-        } else if (message.includes("tie")) {
+        } else{
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
         }
     }
