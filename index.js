@@ -34,14 +34,15 @@ const playRound = (playerSelection, computerSelection) => {
         playerSelection === "rock" && computerSelection === "scissors" || 
         playerSelection === "paper" && computerSelection === "rock" || 
         playerSelection === "scissors" && computerSelection === "paper") {
-        return message = `Player win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
+        return message = `Player win this round! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
     } else if (
         playerSelection === "rock" && computerSelection === "paper" || 
         playerSelection === "paper" && computerSelection === "scissors" || 
         playerSelection === "scissors" && computerSelection === "rock") {
-        return message = `Computer win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
+        return message = `Computer win this round! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
     } else {
-        return message = "Invalid input. Please try again.";
+        message = "Invalid input. Please enter a valid input: Rock, Paper, or Scissors.";
+        alert(message);
     }
 
 }
@@ -58,16 +59,17 @@ const game = () => {
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
         console.log(message);
-
         /* The includes() method determines whether an array includes a certain value among
         its entries, returning true or false as appropriate. */
-        if (message.includes("Player win")) {
+        if (message.includes("Player win")){
             playerSore++;
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
         } else if (message.includes("Computer win")) {
             computerScore++;
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
-        } else{
+        } else if (message.includes("Invalid input")) {
+            --i;
+        } else {
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
         }
     }
