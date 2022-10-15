@@ -59,8 +59,7 @@ const game = () => {
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
         console.log(message);
-        /* The includes() method determines whether an array includes a certain value among
-        its entries, returning true or false as appropriate. */
+
         if (message.includes("Player win")){
             playerSore++;
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
@@ -81,7 +80,6 @@ const game = () => {
     } else {
         console.log(`It's a tie! Player score: ${playerSore} Computer score: ${computerScore}`);
     }
-
     return message;
 }
 
