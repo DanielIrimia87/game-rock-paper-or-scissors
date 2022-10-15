@@ -35,7 +35,7 @@ const playRound = (playerSelection, computerSelection) => {
         playerSelection === "paper" && computerSelection === "rock" || 
         playerSelection === "scissors" && computerSelection === "paper") {
         return message = `Player win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
-    }   else {
+    } else {
         return message = `Computer win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
     }
 }
