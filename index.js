@@ -27,17 +27,23 @@ const computerPlay = () => {
 const playRound = (playerSelection, computerSelection) => {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-  
+
     if (playerSelection === computerSelection) {
-        return message = `You both chose ${playerSelection}.`;
+        return message = `It's a tie! You both chose ${playerSelection}`;
     } else if (
         playerSelection === "rock" && computerSelection === "scissors" || 
         playerSelection === "paper" && computerSelection === "rock" || 
         playerSelection === "scissors" && computerSelection === "paper") {
         return message = `Player win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
-    } else {
+    } else if (
+        playerSelection === "rock" && computerSelection === "paper" || 
+        playerSelection === "paper" && computerSelection === "scissors" || 
+        playerSelection === "scissors" && computerSelection === "rock") {
         return message = `Computer win! Player chose ${playerSelection} and computer chose ${computerSelection}.`;
+    } else {
+        return message = "Invalid input. Please try again.";
     }
+
 }
 
 /**
@@ -61,7 +67,7 @@ const game = () => {
         } else if (message.includes("Computer win")) {
             computerScore++;
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
-        } else {
+        } else if (message.includes("tie")) {
             console.log(`Player score: ${playerSore} Computer score: ${computerScore}`);
         }
     }
@@ -73,6 +79,7 @@ const game = () => {
     } else {
         console.log(`It's a tie! Player score: ${playerSore} Computer score: ${computerScore}`);
     }
+
     return message;
 }
 
